@@ -106,6 +106,7 @@ class LList:
             while node is not None:
                 if node.getdata() == value:
                     return index
+                index += 1
                 node = node.getnext()
             raise ValueError
 

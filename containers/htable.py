@@ -1,5 +1,5 @@
 
-from .list import LList
+from .llist import LList
 
 ### A simple hash table / hash map class
 
@@ -61,34 +61,8 @@ class HTable:
     def __contains__(self, key):
         return key in self.keys[self.hashkey(key)]
 
-    def keys(self):
-        for bucket in range(self.numbuckets):
-            for key in self.keys[bucket]:
-                yield key
-
-    def values(self):
-        for bucket in range(self.numbuckets):
-            for key in self.values[bucket]:
-                yield values
-
     def items(self):
         for bucket in range(self.numbuckets):
             for key, val in zip(self.keys[bucket], self.values[bucket]):
                 yield (key, val)
-
-### Test HTable methods
-
-if __name__ == "__main__":
-    x = HTable()
-    x["a"] = 1.11
-    x["b"] = 2.22
-    x["c"] = 3.33
-    x["a"]
-    print(x)
-    print(len(x))
-    print(x.loadfactor())
-    del x["a"]
-    print(x)
-    print(len(x))
-
 

@@ -12,7 +12,7 @@ def test_LList_instance():
 
 class TestLList(unittest.TestCase):
 
-	def test_append_and_getitem(self):
+	def test_getitem(self):
 		x = test_LList_instance()
 		self.assertEquals(x[0], 1.11)
 		self.assertEquals(x[1], 2.22)
@@ -40,6 +40,10 @@ class TestLList(unittest.TestCase):
 		self.assertEquals(x[0], 1.11)
 		self.assertEquals(x[1], 99)
 		self.assertEquals(x[2], 2.22)
+
+	def test_index(self):
+		x = test_LList_instance()
+		self.assertEquals(x.index(2.22), 1)
 
 	def test_contains(self):
 		x = test_LList_instance()
